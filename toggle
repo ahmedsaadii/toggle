@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Navigation</title>
+    <!-- tailwind cli link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-gray-200 shadow-md border">
+      <section class="container mx-auto px-5 py-2">
+        <div class="flex justify-between items-center">
+          <div class="mr-auto hidden md:block">
+            <ul class="flex items-center font-semibold text-md">
+              <li class="mr-2">Home</li>
+              <li class="mr-2">About</li>
+              <li class="">Contact</li>
+            </ul>
+          </div>
+          <div class="flex items-center md:mx-auto">
+            <a href="#" class="inline-flex">
+              <img
+                src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
+                alt="logo"
+                class="w-10"
+              />
+              <span class="text-gray-800 text-xl font-bold ml-2">Workflow</span>
+            </a>
+          </div>
+          <div class="ml-auto">
+            <button
+              class="bg-gray-800 text-white text-[12px] font-bold px-3 py-1 rounded-md hidden md:block"
+            >
+              LOGIN
+            </button>
+            <img
+              id="toggleButton"
+              class="w-7 md:hidden bg-gray-50 rounded-full"
+              src="https://static.thenounproject.com/png/988413-200.png"
+              alt="toggleButton"
+            />
+          </div>
+        </div>
+        <div id="navigationPanel" class="my-5 hidden">
+          <div class="my-2">
+            <ul
+              class="flex flex-col gap-y-2 items-start font-semibold text-md bg-gray-100 rounded-md p-3"
+            >
+              <li class="mr-2">Home</li>
+              <li class="mr-2">About</li>
+              <li class="">Contact</li>
+            </ul>
+          </div>
+          <button
+            class="bg-gray-800 text-white hover:text-gray-400 text-[12px] font-bold px-3 py-1 rounded-md hover:opacity-90 duration-700"
+          >
+            LOGIN
+          </button>
+        </div>
+      </section>
+    </nav>
+  </body>
+  <script>
+    // JavaScript code to handle the click event
+    const toggleButton = document.getElementById("toggleButton");
+    const navDiv = document.getElementById("navigationPanel");
+
+    toggleButton.addEventListener("click", () => {
+      if (navDiv.style.display === "none") {
+        navDiv.style.display = "block"; // Show the div
+      } else {
+        navDiv.style.display = "none"; // Hide the div
+      }
+    });
+  </script>
+</html>
